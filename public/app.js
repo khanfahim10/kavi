@@ -12,7 +12,7 @@ const audio = document.getElementById('audio');
 
 // Initialize
 function init() {
-  socket = io('http://localhost:3001');
+  socket = io('https://kavi-production.up.railway.app');
 
   socket.on('connect', () => {
     console.log('Connected to server');
@@ -153,7 +153,7 @@ function syncTimeOffset(serverTime) {
 // Room management
 async function createRoom() {
   try {
-    const response = await fetch('http://localhost:3001/api/rooms', {
+    const response = await fetch('https://kavi-production.up.railway.app/api/rooms', {
       method: 'POST'
     });
     const data = await response.json();
